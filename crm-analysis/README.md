@@ -41,3 +41,16 @@ Monetary	 |  How much money a customer has spent in total
 - Prioritizing customer engagement efforts
 
 
+
+
+🔄 Key Differences Between CRM and RFM
+
+| Feature     | CRM                                        | RFM                                    |
+| ----------- | ------------------------------------------ | -------------------------------------- |
+| Scope       | Strategic and operational                  | Analytical and segmentation-focused    |
+| Objective   | Manage customer relationships holistically | Evaluate customer value using behavior |
+| Application | Sales, marketing, customer support         | Customer analytics, campaign targeting |
+| Data Types  | Contact info, interaction history          | Purchase history (time, count, amount) |
+
+
+
