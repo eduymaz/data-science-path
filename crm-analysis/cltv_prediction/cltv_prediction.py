@@ -117,4 +117,18 @@ bgf.predict(4,
             cltv_df['frequency'],
             cltv_df['recency'],
             cltv_df['T']).sum()
-                                    
+
+# -> on 3 months max customers number 
+
+bgf.predict(4 * 3,
+            cltv_df['frequency'],
+            cltv_df['recency'],
+            cltv_df['T']).sum()
+
+cltv_df["expected_purc_3_month"] = bgf.predict(4 * 3,
+                                               cltv_df['frequency'],
+                                               cltv_df['recency'],
+                                               cltv_df['T'])
+
+plot_period_transactions(bgf)
+plt.show()                                            
