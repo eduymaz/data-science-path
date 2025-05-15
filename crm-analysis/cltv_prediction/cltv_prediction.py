@@ -149,3 +149,20 @@ cltv_df["expected_average_profit"] = ggf.conditional_expected_average_profit(clt
                                                                              cltv_df['monetary'])
 cltv_df.sort_values("expected_average_profit", ascending=False).head(10)
 
+# BG-NBD and GAMMA-GAMMA Model
+
+cltv = ggf.customer_lifetime_value(bgf,
+                                   cltv_df['frequency'],
+                                   cltv_df['recency'],
+                                   cltv_df['T'],
+                                   cltv_df['monetary'],
+                                   time=3,  # 3 aylık
+                                   freq="W",  # T'nin frekans bilgisi.
+                                   discount_rate=0.01)
+
+cltv.head()
+
+cltv = cltv.reset_index()
+
+cltv_final = cltv_df.merge(cltv, on="Customer ID", how="left")
+cltv_final.sort_values(by="clv", ascending=False).head(10)
