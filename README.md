@@ -1,1 +1,2 @@
-# data-science-path
+#### NOTE 
+İşlemlerin doğru şekilde çalıştırılması için veri setine `https://archive.ics.uci.edu/ml/datasets/Online+Retail+II` adresinden erişebilir ve crm-analysis içerisinde `datasets` klasörü oluşturup içerisine ekleyebilirsiniz.
