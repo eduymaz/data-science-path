@@ -28,3 +28,11 @@ def replace_with_thresholds(dataframe, variable):
     # dataframe.loc[(dataframe[variable] < low_limit), variable] = low_limit
     dataframe.loc[(dataframe[variable] > up_limit), variable] = up_limit
 
+# read a data 
+
+df_ = pd.read_excel("datasets/online_retail_II.xlsx",
+                    sheet_name="Year 2010-2011")
+df = df_.copy()
+df.describe().T
+df.head()
+df.isnull().sum()
