@@ -1,4 +1,4 @@
-## 📌 Customer Relationship Management (CRM)
+## 📌 Customer Relationship Management (CRM)
 
 Customer Relationship Management (CRM) refers to a set of strategies, tools, and technologies used by businesses to manage and analyze customer interactions and data throughout the customer lifecycle. The goal is to improve customer service relationships, enhance customer retention, and drive sales growth.
 
@@ -18,7 +18,7 @@ Customer Relationship Management (CRM) refers to a set of strategies, tools, and
 - Customer support and service tools
 - Customer segmentation and reporting
 
-## 📌 RFM Analysis (Recency, Frequency, Monetary)
+## 📌 RFM Analysis (Recency, Frequency, Monetary)
 
 RFM analysis is a data-driven customer segmentation technique used to evaluate and rank customers based on their transaction history. It helps businesses understand customer behavior and identify high-value segments for targeted marketing.
 
