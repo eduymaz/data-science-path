@@ -73,3 +73,33 @@ cltv_df = cltv_df[(cltv_df['frequency'] > 1)]
 cltv_df["recency"] = cltv_df["recency"] / 7
 
 cltv_df["T"] = cltv_df["T"] / 7
+
+# BG-NBD Model 
+
+bgf = BetaGeoFitter(penalizer_coef=0.001)
+
+bgf.fit(cltv_df['frequency'],
+        cltv_df['recency'],
+        cltv_df['T'])
+
+
+# -> on a week max customers number 
+
+bgf.conditional_expected_number_of_purchases_up_to_time(1,
+                                                        cltv_df['frequency'],
+                                                        cltv_df['recency'],
+                                                        cltv_df['T']).sort_values(ascending=False).head(10)
+
+bgf.predict(1,
+            cltv_df['frequency'],
+            cltv_df['recency'],
+            cltv_df['T']).sort_values(ascending=False).head(10)
+
+cltv_df["expected_purc_1_week"] = bgf.predict(1,
+                                              cltv_df['frequency'],
+                                              cltv_df['recency'],
+                                              cltv_df['T'])
+
+
+# -> on a month max customers number 
+                                    
