@@ -102,4 +102,19 @@ cltv_df["expected_purc_1_week"] = bgf.predict(1,
 
 
 # -> on a month max customers number 
+
+bgf.predict(4,
+            cltv_df['frequency'],
+            cltv_df['recency'],
+            cltv_df['T']).sort_values(ascending=False).head(10)
+
+cltv_df["expected_purc_1_month"] = bgf.predict(4,
+                                               cltv_df['frequency'],
+                                               cltv_df['recency'],
+                                               cltv_df['T'])
+
+bgf.predict(4,
+            cltv_df['frequency'],
+            cltv_df['recency'],
+            cltv_df['T']).sum()
                                     
