@@ -36,3 +36,18 @@ df = df_.copy()
 df.describe().T
 df.head()
 df.isnull().sum()
+
+
+# preprocess 
+
+df.dropna(inplace=True)
+df = df[~df["Invoice"].str.contains("C", na=False)]
+df = df[df["Quantity"] > 0]
+df = df[df["Price"] > 0]
+
+replace_with_thresholds(df, "Quantity")
+replace_with_thresholds(df, "Price")
+
+df["TotalPrice"] = df["Quantity"] * df["Price"]
+
+today_date = dt.datetime(2011, 12, 11)
