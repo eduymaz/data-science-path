@@ -51,3 +51,25 @@ replace_with_thresholds(df, "Price")
 df["TotalPrice"] = df["Quantity"] * df["Price"]
 
 today_date = dt.datetime(2011, 12, 11)
+
+# lifetime data 
+
+cltv_df = df.groupby('Customer ID').agg(
+    {'InvoiceDate': [lambda InvoiceDate: (InvoiceDate.max() - InvoiceDate.min()).days,
+                     lambda InvoiceDate: (today_date - InvoiceDate.min()).days],
+     'Invoice': lambda Invoice: Invoice.nunique(),
+     'TotalPrice': lambda TotalPrice: TotalPrice.sum()})
+
+cltv_df.columns = cltv_df.columns.droplevel(0)
+
+cltv_df.columns = ['recency', 'T', 'frequency', 'monetary']
+
+cltv_df["monetary"] = cltv_df["monetary"] / cltv_df["frequency"]
+
+cltv_df.describe().T
+
+cltv_df = cltv_df[(cltv_df['frequency'] > 1)]
+
+cltv_df["recency"] = cltv_df["recency"] / 7
+
+cltv_df["T"] = cltv_df["T"] / 7
