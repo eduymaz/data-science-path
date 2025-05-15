@@ -1,36 +1,11 @@
-############################################
-# CUSTOMER LIFETIME VALUE (Müşteri Yaşam Boyu Değeri)
-############################################
-
-# 1. Veri Hazırlama
-# 2. Average Order Value (average_order_value = total_price / total_transaction)
-# 3. Purchase Frequency (total_transaction / total_number_of_customers)
-# 4. Repeat Rate & Churn Rate (birden fazla alışveriş yapan müşteri sayısı / tüm müşteriler)
-# 5. Profit Margin (profit_margin =  total_price * 0.10)
-# 6. Customer Value (customer_value = average_order_value * purchase_frequency)
-# 7. Customer Lifetime Value (CLTV = (customer_value / churn_rate) x profit_margin)
-# 8. Segmentlerin Oluşturulması
-# 9. BONUS: Tüm İşlemlerin Fonksiyonlaştırılması
 
 ##################################################
-# 1. Veri Hazırlama
+# 1. Preparation Data
 ##################################################
 
-# Veri Seti Hikayesi
+# DATA SET
 # https://archive.ics.uci.edu/ml/datasets/Online+Retail+II
 
-# Online Retail II isimli veri seti İngiltere merkezli online bir satış mağazasının
-# 01/12/2009 - 09/12/2011 tarihleri arasındaki satışlarını içeriyor.
-
-# Değişkenler
-# InvoiceNo: Fatura numarası. Her işleme yani faturaya ait eşsiz numara. C ile başlıyorsa iptal edilen işlem.
-# StockCode: Ürün kodu. Her bir ürün için eşsiz numara.
-# Description: Ürün ismi
-# Quantity: Ürün adedi. Faturalardaki ürünlerden kaçar tane satıldığını ifade etmektedir.
-# InvoiceDate: Fatura tarihi ve zamanı.
-# UnitPrice: Ürün fiyatı (Sterlin cinsinden)
-# CustomerID: Eşsiz müşteri numarası
-# Country: Ülke ismi. Müşterinin yaşadığı ülke.
 
 import pandas as pd
 from sklearn.preprocessing import MinMaxScaler
@@ -71,7 +46,7 @@ cltv_c.shape[0]
 cltv_c["purchase_frequency"] = cltv_c["total_transaction"] / cltv_c.shape[0]
 
 ##################################################
-# 4. Repeat Rate & Churn Rate (birden fazla alışveriş yapan müşteri sayısı / tüm müşteriler)
+# 4. Repeat Rate & Churn Rate 
 ##################################################
 
 repeat_rate = cltv_c[cltv_c["total_transaction"] > 1].shape[0] / cltv_c.shape[0]
@@ -101,7 +76,7 @@ cltv_c.sort_values(by="cltv", ascending=False).head()
 
 
 ##################################################
-# 8. Segmentlerin Oluşturulması
+# 8. Make a segmentation
 ##################################################
 
 cltv_c.sort_values(by="cltv", ascending=False).tail()
@@ -114,26 +89,11 @@ cltv_c.groupby("segment").agg({"count", "mean", "sum"})
 
 cltv_c.to_csv("cltc_c.csv")
 
-# 18102.00000       A
-# 14646.00000       A
-# 14156.00000       A
-# 14911.00000       A
-# 13694.00000       A
-
-# Customer ID
-# 18102.00000       A
-# 14646.00000       A
-# 14156.00000       A
-# 14911.00000       A
-# 13694.00000       A
-
-##################################################
-# 9. BONUS: Tüm İşlemlerin Fonksiyonlaştırılması
-##################################################
+# others code: 
 
 def create_cltv_c(dataframe, profit=0.10):
 
-    # Veriyi hazırlama
+    # preparing data
     dataframe = dataframe[~dataframe["Invoice"].str.contains("C", na=False)]
     dataframe = dataframe[(dataframe['Quantity'] > 0)]
     dataframe.dropna(inplace=True)
@@ -164,28 +124,3 @@ def create_cltv_c(dataframe, profit=0.10):
 df = df_.copy()
 
 clv = create_cltv_c(df)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
