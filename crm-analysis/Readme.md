@@ -1,7 +1,7 @@
 ## 📌 Customer Relationship Management (CRM)
 Customer Relationship Management (CRM) refers to a set of strategies, tools, and technologies used by businesses to manage and analyze customer interactions and data throughout the customer lifecycle. The goal is to improve customer service relationships, enhance customer retention, and drive sales growth.
 
-#### Key Objectives:
+>>> Key Objectives:
 
 - Centralize and organize customer information
 - Track and optimize interactions across multiple touchpoints
@@ -9,7 +9,7 @@ Customer Relationship Management (CRM) refers to a set of strategies, tools, and
 - Support sales and marketing automation
 - Enable data-driven decision-making
 
-#### What CRM Systems Offer:
+>>> What CRM Systems Offer:
 
 - Contact and lead management
 - Sales pipeline tracking
@@ -20,15 +20,18 @@ Customer Relationship Management (CRM) refers to a set of strategies, tools, and
 ## 📌 RFM Analysis (Recency, Frequency, Monetary)
 RFM analysis is a data-driven customer segmentation technique used to evaluate and rank customers based on their transaction history. It helps businesses understand customer behavior and identify high-value segments for targeted marketing.
 
-#### RFM Dimensions:
+>>> RFM Dimensions:
 
 **Metric** |  **Description**
+
 Recency	   |  How recently a customer made a purchase
+
 Frequency  |  How often a customer makes a purchase within a given time frame
+
 Monetary	 |  How much money a customer has spent in total
 
 
-#### Common Use Cases
+>>> Common Use Cases
 
 - Segmenting customers for personalized marketing campaigns
 -Identifying loyal, at-risk, or high-spending customers
