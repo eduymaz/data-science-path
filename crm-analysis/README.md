@@ -24,13 +24,12 @@ RFM analysis is a data-driven customer segmentation technique used to evaluate a
 
 >>> RFM Dimensions:
 
-**Metric** |  **Description**
+| Metric        | Description                                                     |
+| ------------- | --------------------------------------------------------------- |
+| **Recency**   | How recently a customer made a purchase                         |
+| **Frequency** | How often a customer makes a purchase within a given time frame |
+| **Monetary**  | How much money a customer has spent in total                    |
 
-Recency	   |  How recently a customer made a purchase
-
-Frequency  |  How often a customer makes a purchase within a given time frame
-
-Monetary	 |  How much money a customer has spent in total
 
 
 >>> Common Use Cases
