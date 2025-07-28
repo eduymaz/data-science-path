@@ -35,15 +35,20 @@ RFM skorları üzerinden müşteri segmentleri oluşturulur. Bu segmentler, paza
 Segmentasyon, R ve F skorlarına göre bir matris oluşturularak görselleştirilir. Aşağıda 5x5'lik bir x-y düzlemi üzerinde bölmeli kutular içinde segmentler yerleştirilmiştir:
 
 ```
-+------------------+------------------+------------------+------------------+------------------+
-|                  | 0 - 2.5          | 2.5 - 3.5        | 3.5 - 4.5        | 4.5 - 5.5        |
-+------------------+------------------+------------------+------------------+------------------+
-| **0 - 2.5**     | Hibernating      | About to Sleep   | Promising        | New Customers    |
-+------------------+------------------+------------------+------------------+------------------+
-| **2.5 - 4.5**   | At Risk          | Need Attention   | Potential Loyalists | Champions     |
-+------------------+------------------+------------------+------------------+------------------+
-| **4.5 - 5.5**   | Can't Lose Them  | Loyal Customers  | Potential Loyalists | Champions     |
-+------------------+------------------+------------------+------------------+------------------+
+        +------------------+------------------+------------------+------------------+------------------+
+        |                  |    0 - 2.5       |    2.5 - 3.5     |    3.5 - 4.5     |    4.5 - 5.5     |
+        +------------------+------------------+------------------+------------------+------------------+
+          |                  |                |                  | Promising        | New Customers    |
+        | **0 - 2.5**      | Hibernating      | About to Sleep   +------------------+------------------+
+        |                  |                  |                  |                                     |
+**F**   +------------------+------------------+------------------+        Potential Loyalists          | 
+        |                  |                  | Need Attention   |                                     |
+        | **2.5 - 4.5**    | At Risk          |                  |                                     |
+        |                  |                  +------------------+------------------+------------------+
+        +------------------+------------------|          Loyal Customers            |    Champions     |
+        | **4.5 - 5.5**    | Can't Lose Them  |                                     |                  |               
+        +------------------+------------------+------------------+------------------+------------------+
+                                                      **R**
 ```
 
 *Tablo: R ve F skorlarına göre müşteri segmentasyonu. Bu matris, müşteri davranışlarını görselleştirmek için 5x5'lik bir düzlemde bölmeli kutular şeklinde sunulmuştur.*
