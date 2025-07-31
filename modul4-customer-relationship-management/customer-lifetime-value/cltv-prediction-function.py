@@ -57,6 +57,12 @@ def create_cltv_p(dataframe, month=3):
     cltv_df["recency"] = cltv_df["recency"] / 7
     cltv_df["T"] = cltv_df["T"] / 7
 
+    # Filter out non-positive monetary values
+    cltv_df = cltv_df[cltv_df['monetary'] > 0]
+
+    if cltv_df.empty:
+        raise ValueError("All monetary values are non-positive. Check your data.")
+
     # Fit BG-NBD model
     bgf = BetaGeoFitter(penalizer_coef=0.001)
     bgf.fit(cltv_df['frequency'], cltv_df['recency'], cltv_df['T'])
@@ -92,3 +98,4 @@ def create_cltv_p(dataframe, month=3):
     cltv_final['segment'] = pd.qcut(cltv_final['clv'], 4, labels=['D', 'C', 'B', 'A'])
 
     return cltv_final
+
