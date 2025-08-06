@@ -13,6 +13,16 @@ Key concepts:
 - **Confidence**: Likelihood of a consequent item given the antecedent.
 - **Lift**: Measure of how much more likely items are to be bought together compared to random chance.
 
+
+>> **Apriori Algorithm :** 
+
+- $Support(X,Y) = Freq(X,Y) / N$
+
+- $Confidence(X,Y) = Freq(X,Y) / Freq(X)$
+
+- $Lift = Support(X,Y) / Support(X) * Support(Y)$
+
+
 ---
 
 ## 2. Content-Based Recommendation 📚
