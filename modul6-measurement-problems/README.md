@@ -13,9 +13,7 @@ Rating products involves aggregating user feedback to evaluate the quality or po
 1. **Simple Average:**  
    The arithmetic mean of all ratings.  
    Formula:  
-$
-   \text{Average} = \frac{\sum_{i=1}^{n} R_i}{n}
-$  
+$\text{Average} = \frac{\sum_{i=1}^{n} R_i}{n}$  
    where $(R_i)$ is the rating and $(n)$ is the total number of ratings.
 
 2. **Time-Based Weighted Average:**  
@@ -53,17 +51,13 @@ Sorting products involves ranking items based on specific criteria to improve us
 3. **Bayesian Average Rating Score:**  
    Adjusts the average rating by incorporating prior knowledge to handle variability in the number of ratings.  
    Formula:  
-$ 
-   BAR = \frac{\sum_{i=1}^{n} (R_i \cdot W_i)}{\sum_{i=1}^{n} W_i}
-$ 
+$BAR = \frac{\sum_{i=1}^{n} (R_i \cdot W_i)}{\sum_{i=1}^{n} W_i}$ 
    where $(W_i)$ is the weight for each rating.
 
 4. **Bayesian Formula:**  
    A specific implementation of Bayesian scoring used by IMDB .  
    Formula:  
-$
-   WR = \frac{v}{v+m} \cdot R + \frac{m}{v+m} \cdot C
-$
+$WR = \frac{v}{v+m} \cdot R + \frac{m}{v+m} \cdot C$
 
 ---
 
@@ -80,27 +74,25 @@ Sorting reviews involves ranking user reviews to highlight the most helpful or r
    Uses the mean of all ratings for a review.
 
 3. **Wilson Lower Bound Score (WLB):**  
-   A statistical method to calculate the lower bound of a confidence interval for a Bernoulli parameter \( p \).  
+   A statistical method to calculate the lower bound of a confidence interval for a Bernoulli parameter $(p)$.  
    Formula:  
-   \[
-   WLB = \hat{p} - z \cdot \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}
-   \]  
+   $WLB = \hat{p} - z \cdot \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}$ 
    where:
-   - \( \hat{p} \): Proportion of positive ratings.
-   - \( z \): Z-score for the desired confidence level.
-   - \( n \): Total number of ratings.
+   - $(hat{p})$: Proportion of positive ratings.
+   - $(z)$: Z-score for the desired confidence level.
+   - $(n)$: Total number of ratings.
 
 ---
 
 ## 4. A/B Testing
 
 ### Definition:
-A/B testing is a statistical method to compare two groups (e.g., control and treatment) to determine if there is a significant difference between them.
+$A/B$ testing is a statistical method to compare two groups (e.g., control and treatment) to determine if there is a significant difference between them.
 
 ### Steps:
 1. **Hypothesis Formulation:**  
-   - Null Hypothesis ($ H_0$): No difference between groups.
-   - Alternative Hypothesis ($H_1$)): A significant difference exists.
+   - Null Hypothesis $(H_0)$: No difference between groups.
+   - Alternative Hypothesis $(H_1)$: A significant difference exists.
 
 2. **Sampling:**  
    Collect representative samples for both groups.
@@ -110,7 +102,7 @@ A/B testing is a statistical method to compare two groups (e.g., control and tre
 
 4. **Assumption Checks:**  
    - **Normality:**  
-     Use the Shapiro-Wilk test to check if data follows a normal distribution.
+     Use the *Shapiro-Wilk* test to check if data follows a normal distribution.
    - **Variance Homogeneity:**  
      Use Levene's test to check if variances are equal.
 
@@ -118,11 +110,11 @@ A/B testing is a statistical method to compare two groups (e.g., control and tre
    - **Parametric Test:**  
      Independent two-sample t-test if assumptions are met.
    - **Non-Parametric Test:**  
-     Mann-Whitney U test if assumptions are violated.
+     *Mann-Whitney U* test if assumptions are violated.
 
 6. **P-Value Interpretation:**  
-   - $( p < 0.05)$: Reject ($ H_0$).
-   - $( p \geq 0.05)$: Fail to reject ($ H_0$).
+   - $(p < 0.05)$: Reject $(H_0)$.
+   - $(p \geq 0.05)$: Fail to reject $(H_0)$.
 
 
 

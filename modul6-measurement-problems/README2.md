@@ -1,6 +1,6 @@
 # Ölçüm Problemleri (Measurement Problems)
 
-Bu doküman, veri biliminde karşılaşılan temel ölçüm problemlerini (ürün derecelendirme, ürün sıralama, yorum sıralama ve A/B testi) akademik bir şekilde açıklamaktadır. Her bölümde kavramların tanımları, yöntemler ve detaylı örnekler yer almaktadır.
+Bu doküman, veri biliminde karşılaşılan temel ölçüm problemlerini (ürün derecelendirme, ürün sıralama, yorum sıralama ve $A/B$ testi) akademik bir şekilde açıklamaktadır. Her bölümde kavramların tanımları, yöntemler ve detaylı örnekler yer almaktadır.
 
 ---
 
@@ -13,8 +13,8 @@ Bu doküman, veri biliminde karşılaşılan temel ölçüm problemlerini (ürü
 1. **Basit Ortalama:**  
    Tüm derecelendirmelerin aritmetik ortalaması.  
    Formül:  
-   $ \text{Ortalama} = \frac{\sum_{i=1}^{n} R_i}{n} $  
-   Burada $ R_i $, derecelendirme ve $ n $, toplam derecelendirme sayısıdır.
+   $\text{Ortalama} = \frac{\sum_{i=1}^{n} R_i}{n}$  
+   Burada $R_i$, derecelendirme ve $n$, toplam derecelendirme sayısıdır.
 
 2. **Zamana Dayalı Ağırlıklı Ortalama:**  
    Zamanla değişen trendleri hesaba katmak için son derecelendirmelere daha fazla ağırlık verir.
@@ -25,12 +25,12 @@ Bu doküman, veri biliminde karşılaşılan temel ölçüm problemlerini (ürü
 4. **Ağırlıklı Derecelendirme (IMDB Formülü):**  
    Ortalama derecelendirmeyi minimum oy sayısı ile birleştirerek güvenilirliği artırır.  
    Formül:  
-   $ WR = \frac{v}{v+m} \cdot R + \frac{m}{v+m} \cdot C $ 
+   $WR = \frac{v}{v+m} \cdot R + \frac{m}{v+m} \cdot C$ 
    Burada:
-   - $ (v) $: Ürün için oy sayısı.
-   - $ (m) $: Minimum oy sayısı.
-   - $ (R) $: Ortalama derecelendirme.
-   - $ (C) $: Tüm ürünlerin ortalama derecelendirmesi.
+   - $(v)$: Ürün için oy sayısı.
+   - $(m)$: Minimum oy sayısı.
+   - $(R)$: Ortalama derecelendirme.
+   - $(C)$: Tüm ürünlerin ortalama derecelendirmesi.
 
 ---
 
@@ -49,13 +49,13 @@ Bu doküman, veri biliminde karşılaşılan temel ölçüm problemlerini (ürü
 3. **Bayes Ortalama Derecelendirme Skoru:**  
    Derecelendirme sayısındaki değişkenliği ele almak için ön bilgi kullanarak ortalama derecelendirmeyi ayarlar.  
    Formül:  
-   $ BAR = \frac{\sum_{i=1}^{n} (R_i \cdot W_i)}{\sum_{i=1}^{n} W_i} $  
-   Burada $ W_i $, her derecelendirme için ağırlıktır.
+   $BAR = \frac{\sum_{i=1}^{n} (R_i \cdot W_i)}{\sum_{i=1}^{n} W_i}$  
+   Burada $W_i$, her derecelendirme için ağırlıktır.
 
 4. **IMDB Bayes Formülü:**  
    IMDB tarafından kullanılan Bayes derecelendirme yöntemi.  
    Formül:  
-   $ WR = \frac{v}{v+m} \cdot R + \frac{m}{v+m} \cdot C $
+   $WR = \frac{v}{v+m} \cdot R + \frac{m}{v+m} \cdot C$
 
 ---
 
@@ -72,13 +72,13 @@ Yorum sıralama, kullanıcı yorumlarını en faydalı veya en alakalı olanlar�
    Bir yorum için tüm derecelendirmelerin ortalamasını kullanır.
 
 3. **Wilson Alt Güven Sınırı (WLB):**  
-   Bernoulli parametresi $ p $ için bir güven aralığının alt sınırını hesaplayan istatistiksel bir yöntemdir.  
+   Bernoulli parametresi $p$ için bir güven aralığının alt sınırını hesaplayan istatistiksel bir yöntemdir.  
    Formül:  
-   $ WLB = \hat{p} - z \cdot \sqrt{\frac{\hat{p}(1-\hat{p})}{n}} $ 
+   $WLB = \hat{p} - z \cdot \sqrt{\frac{\hat{p}(1-\hat{p})}{n}}$ 
    Burada:
-   - $ (\hat{p}) $: Pozitif derecelendirme oranı.
-   - $ (z) $: İstenen güven seviyesi için Z-skoru.
-   - $ (n) $: Toplam derecelendirme sayısı.
+   - $(\hat{p})$: Pozitif derecelendirme oranı.
+   - $(z)$: İstenen güven seviyesi için Z-skoru.
+   - $(n)$: Toplam derecelendirme sayısı.
 
 ---
 
@@ -89,8 +89,8 @@ A/B testi, iki grubu (ör. kontrol ve tedavi) karşılaştırmak için kullanıl
 
 ### Adımlar:
 1. **Hipotez Kurulumu:**  
-   - Null Hipotez ($ H_0 $): Gruplar arasında fark yoktur.
-   - Alternatif Hipotez ($ H_1 $): Anlamlı bir fark vardır.
+   - Null Hipotez $(H_0)$: Gruplar arasında fark yoktur.
+   - Alternatif Hipotez $(H_1)$: Anlamlı bir fark vardır.
 
 2. **Örnekleme:**  
    Her iki grup için temsil edici örnekler toplanır.
@@ -100,19 +100,19 @@ A/B testi, iki grubu (ör. kontrol ve tedavi) karşılaştırmak için kullanıl
 
 4. **Varsayım Kontrolleri:**  
    - **Normallik:**  
-     Verinin normal dağılıma uyup uymadığını kontrol etmek için Shapiro-Wilk testi kullanılır.
+     Verinin normal dağılıma uyup uymadığını kontrol etmek için *Shapiro-Wilk* testi kullanılır.
    - **Varyans Homojenliği:**  
-     Varyansların eşit olup olmadığını kontrol etmek için Levene testi kullanılır.
+     Varyansların eşit olup olmadığını kontrol etmek için *Levene* testi kullanılır.
 
 5. **Hipotez Testi:**  
    - **Parametrik Test:**  
      Varsayımlar sağlanıyorsa bağımsız iki örneklem t-testi uygulanır.
    - **Non-Parametrik Test:**  
-     Varsayımlar sağlanmıyorsa Mann-Whitney U testi uygulanır.
+     Varsayımlar sağlanmıyorsa *Mann-Whitney U* testi uygulanır.
 
 6. **P-Değeri Yorumu:**  
-   - $ p < 0.05 $: $ H_0 $ reddedilir.
-   - $ p \geq 0.05 $: $ H_0 $ reddedilemez.
+   - $p < 0.05$: $H_0$ reddedilir.
+   - $p \geq 0.05$: $H_0$ reddedilemez.
 
 ---
 
